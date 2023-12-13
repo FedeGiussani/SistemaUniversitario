@@ -4,14 +4,16 @@ import datetime
 
 class UsuarioFinal(Usuario):
 
-    def __init__(self, nombre_usuario, contrasena, nombre, apellido, email, claustro):
+    def __init__(self, nombre_usuario, contrasena, ID, nombre, apellido, email, claustro):
         super().__init__(nombre_usuario, contrasena)
-        #self._nombre_usuario=nombre_usuario
-        #self._contrasena=contrasena
+        self._nombre_usuario=nombre_usuario
+        self._contrasena=contrasena
+        self._ID=ID
         self.__nombre=nombre
         self.__apellido=apellido
         self.__email=email
         self.__claustro=claustro
+        self.__departamento=0
         self.__reclamos_adheridos=[] #lista de ID de reclamos adheridos
         self.__reclamos_generados=[] #lista de ID de reclamos generados por el usuario
 
@@ -49,3 +51,6 @@ class UsuarioFinal(Usuario):
     
     def get_reclamos_generados(self) -> list:
         return self.__reclamos_generados
+    
+    def get_departamento(self):
+        return self.__departamento
